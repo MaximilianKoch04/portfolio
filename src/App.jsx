@@ -50,9 +50,9 @@ export default function App() {
   }
 
   const projects = [
-    { title: 'Futbolle', category: 'JUEGO WEB', mark: '01', text: 'Un jugador secreto, ocho intentos. Un juego de fútbol en el que cada respuesta revela pistas para descubrir al jugador.', details: 'Pistas por nacionalidad, liga, equipo y posición. Búsqueda de jugadores, historial de intentos y temporizador.', tech: ['HTML', 'CSS', 'JavaScript'], link: `${profile.github}/proyecto-futbolle`, label: 'Ver repositorio' },
-    { title: 'FoodRoute', category: 'GESTIÓN DE STOCK', mark: '02', text: 'Una aplicación para gestionar productos y lotes de alimentos, con módulos de clientes y proveedores.', details: 'Desarrollada con ASP.NET Core y Entity Framework, con autenticación de usuarios y base de datos SQL Server.', tech: ['C#', 'ASP.NET Core', 'SQL Server'], link: `${profile.github}/FoodRoute`, label: 'Ver repositorio' },
-    { title: 'Portfolio personal', category: 'DESARROLLO FRONTEND', mark: '03', text: 'Este sitio: una presentación de mis proyectos, mis tecnologías y las formas de contactarme.', details: 'Una interfaz inspirada en el pixel art, con navegación por secciones, diseño responsive y acceso con teclado.', tech: ['React', 'Vite', 'CSS'], link: profile.portfolioRepo || '#inicio', label: profile.portfolioRepo ? 'Ver repositorio' : 'Explorar este sitio' },
+    { title: 'Futbolle', category: 'JUEGO WEB', text: 'Un jugador secreto, ocho intentos. Un juego de fútbol en el que cada respuesta revela pistas para descubrir al jugador.', details: 'Pistas por nacionalidad, liga, equipo y posición. Búsqueda de jugadores, historial de intentos y temporizador.', tech: ['HTML', 'CSS', 'JavaScript'], link: `${profile.github}/proyecto-futbolle`, label: 'Ver repositorio' },
+    { title: 'FoodRoute', category: 'GESTIÓN DE STOCK', text: 'Una aplicación para gestionar productos y lotes de alimentos, con módulos de clientes y proveedores.', details: 'Desarrollada con ASP.NET Core y Entity Framework, con autenticación de usuarios y base de datos SQL Server.', tech: ['C#', 'ASP.NET Core', 'SQL Server'], link: `${profile.github}/FoodRoute`, label: 'Ver repositorio' },
+    { title: 'Portfolio personal', category: 'DESARROLLO FRONTEND', text: 'Este sitio: una presentación de mis proyectos, mis tecnologías y las formas de contactarme.', details: 'Una interfaz inspirada en el pixel art, con navegación por secciones, diseño responsive y acceso con teclado.', tech: ['React', 'Vite', 'CSS'], link: profile.portfolioRepo || '#inicio', label: profile.portfolioRepo ? 'Ver repositorio' : 'Explorar este sitio' },
   ];
 
   return <>
@@ -79,33 +79,33 @@ export default function App() {
       </section>
 
       <section className="about section" id="sobre-mi" aria-labelledby="about-title">
-        <div className="section-heading"><span className="section-index" aria-hidden="true">01 /</span><h2 id="about-title">SOBRE MÍ</h2></div>
+        <div className="section-heading"><h2 id="about-title">SOBRE MÍ</h2></div>
         <div className="about-grid">
-          <div className="bio"><p className="intro">Un poco sobre el jugador.</p><p>Soy Maximiliano Koch, estudiante de Ingeniería en Sistemas y editor de video. Desarrollo proyectos con C# y SQL, y páginas web con HTML, CSS y JavaScript. También edito videos cortos para redes y marca personal, combinando programación y creatividad en lo que hago.</p><a className="text-link" href={profile.github} target="_blank" rel="noopener noreferrer">Conocer mi GitHub <span className="external-label">[abrir]</span></a></div>
+          <div className="bio"><p>Soy Maximiliano Koch, estudiante de Ingeniería en Sistemas y editor de video. Desarrollo proyectos con C# y SQL, y páginas web con HTML, CSS y JavaScript. También edito videos cortos para redes y marca personal, combinando programación y creatividad en lo que hago.</p><a className="text-link" href={profile.github} target="_blank" rel="noopener noreferrer">Conocer mi GitHub <span className="external-label">[abrir]</span></a></div>
           <div className="skills"><h3>MI INVENTARIO</h3><div className="skill-row"><span className="skill-label">Frontend</span><div className="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div></div><div className="skill-row"><span className="skill-label">Backend</span><div className="tags"><span>C#</span><span>SQL</span></div></div><div className="skill-row"><span className="skill-label">Herramientas</span><div className="tags"><span>GitHub</span></div></div></div>
         </div>
       </section>
 
       <section className="projects section" id="proyectos" aria-labelledby="projects-title">
-        <div className="section-heading"><span className="section-index" aria-hidden="true">02 /</span><h2 id="projects-title">PROYECTOS</h2><span className="section-count">03 SELECCIONADOS</span></div>
+        <div className="section-heading"><h2 id="projects-title">PROYECTOS</h2></div>
         <div className="project-grid">{projects.map(project => <article className="project-card" key={project.title}>
-          <div className="card-top"><span>{project.category}</span><span className="project-number" aria-hidden="true">{project.mark}</span></div>
+          <div className="card-top"><span>{project.category}</span></div>
           <h3>{project.title}</h3><p>{project.text}</p><p className="project-detail">{project.details}</p><ul className="project-tech" aria-label="Tecnologías">{project.tech.map(tech => <li key={tech}>{tech}</li>)}</ul><a className="project-link" href={project.link} {...(project.link.startsWith('https:') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}><span aria-hidden="true">+</span>{project.label}<span className="external-label">[{project.link.startsWith('https:') ? 'código' : 'inicio'}]</span></a>
         </article>)}</div>
       </section>
 
       <section className="editing section" id="edicion" aria-labelledby="editing-title">
-        <div className="section-heading"><span className="section-index" aria-hidden="true">03 /</span><h2 id="editing-title">EDICIÓN DE VIDEO</h2></div>
+        <div className="section-heading"><h2 id="editing-title">EDICIÓN DE VIDEO</h2></div>
         <div className="editing-intro"><div><p className="intro">Otra forma de contar una historia.</p><p className="muted">Una selección de mis ediciones para videos cortos y marca personal.</p></div><span className="editing-label">MI LADO CREATIVO</span></div>
-        <div className="editing-grid">{edits.map((edit,index) => <article className="edit-card" key={edit.title}>
+        <div className="editing-grid">{edits.map(edit => <article className="edit-card" key={edit.title}>
           <div className="edit-media">{edit.src ? <video controls playsInline preload="metadata" poster={edit.poster} aria-label={`Edición de video: ${edit.title}`}><source src={`./edicion/${edit.src}`} type="video/mp4" />Tu navegador no puede reproducir este video.</video> : <img src={edit.poster} alt={`Miniatura original de mi edición: ${edit.title}`} width="405" height="720" loading="lazy" />}</div>
-          <div className="edit-caption"><span className="edit-index">0{index+1}</span><div><h3>{edit.title}</h3><p>EDICIÓN / VIDEO CORTO</p></div></div>
+          <div className="edit-caption"><div><h3>{edit.title}</h3><p>EDICIÓN / VIDEO CORTO</p></div></div>
         </article>)}</div>
         <div className="editing-bottom"><p>Estas son miniaturas de mis trabajos.<br />Los videos se pueden ver en mi portfolio de Canva.</p><a className="pixel-button" href={profile.videoPortfolio} target="_blank" rel="noopener noreferrer">Ver videos en Canva</a></div>
       </section>
 
       <section className="contact section" id="contacto" aria-labelledby="contact-title">
-        <div className="section-heading"><span className="section-index" aria-hidden="true">04 /</span><h2 id="contact-title">CONTACTO</h2></div>
+        <div className="section-heading"><h2 id="contact-title">CONTACTO</h2></div>
         <div className="contact-box"><div><p className="contact-kicker">EL SIGUIENTE PROYECTO</p><h3>¿Hablamos?</h3><p>Si querés conocer más sobre mis proyectos<br className="desktop-break" /> o ponerte en contacto, escribime.</p><a className="email-link" href={`mailto:${profile.email}`}>{profile.email}</a></div><div className="contact-actions"><a className="pixel-button primary" href={`mailto:${profile.email}`}><Heart />Enviar un email</a><button className="pixel-button" type="button" onClick={copyEmail}>Copiar email</button><p className="copy-feedback" role="status" aria-live="polite">{copied}</p></div></div>
         <div className="social-links"><a href={profile.github} target="_blank" rel="noopener noreferrer">GitHub <span>[abrir]</span></a>{profile.linkedin ? <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn <span>[abrir]</span></a> : <span className="linkedin-pending">LinkedIn <span>[próximamente]</span></span>}<a href="#inicio" className="back-top">Volver al inicio <span aria-hidden="true">↑</span></a></div>
       </section>
