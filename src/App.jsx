@@ -8,9 +8,20 @@ const profile = {
   linkedin: '',
   // Agregá la URL del repositorio de este portfolio cuando esté publicado.
   portfolioRepo: '',
+  videoPortfolio: '',
 };
 
-const sections = [['inicio', 'Inicio'], ['sobre-mi', 'Sobre mí'], ['proyectos', 'Proyectos'], ['contacto', 'Contacto']];
+const sections = [['inicio', 'Inicio'], ['sobre-mi', 'Sobre mí'], ['proyectos', 'Proyectos'], ['edicion', 'Edición'], ['contacto', 'Contacto']];
+
+// Miniaturas originales tomadas del portfolio de Canva.
+// Para habilitar la reproducción local, agregar los MP4 a public/edicion
+// y completar el campo src. No usar URLs blob ni enlaces temporales de Canva.
+const edits = [
+  { title: 'Unión Soviética', poster: './edicion/union-sovietica.jpg', src: '' },
+  { title: 'Llados', poster: './edicion/llados.jpg', src: '' },
+  { title: 'MrBeast', poster: './edicion/mrbeast.jpg', src: '' },
+  { title: 'Ramiro Cumbria', poster: './edicion/ramiro-cumbria.jpg', src: '' },
+];
 
 function Heart({ className = '' }) {
   return <svg className={`heart ${className}`} viewBox="0 0 9 8" aria-hidden="true" shapeRendering="crispEdges"><path d="M1 0h2v1h1v1h1V1h1V0h2v1h1v3H8v1H7v1H6v1H5v1H4V7H3V6H2V5H1V4H0V1h1Z" fill="currentColor" /></svg>;
@@ -58,10 +69,10 @@ export default function App() {
 
     <main id="contenido">
       <section className="hero" id="inicio" aria-labelledby="hero-title">
-        <div className="hero-top"><span>DESARROLLADOR EN FORMACIÓN</span><span className="hero-location">C# / SQL / WEB</span></div>
+        <div className="hero-top"><span>DESARROLLADOR EN FORMACIÓN · EDITOR DE VIDEO</span><span className="hero-location">C# / SQL / WEB</span></div>
         <h1 id="hero-title"><span>MAXIMILIANO</span><span>KOCH<span className="name-cursor" aria-hidden="true">_</span></span></h1>
         <div className="hero-bottom">
-          <div className="dialogue"><span className="dialogue-star" aria-hidden="true">*</span><p>Desarrollo aplicaciones de gestión<br className="desktop-break" /> y experiencias web.<br /><span className="muted">Cada proyecto es un nuevo desafío.</span></p></div>
+          <div className="dialogue"><span className="dialogue-star" aria-hidden="true">*</span><p>Desarrollo aplicaciones y experiencias web.<br /><span className="muted">También cuento historias con video.</span></p></div>
           <div className="hero-actions"><a className="pixel-button primary" href="#proyectos"><Heart />Ver proyectos</a><a className="pixel-button" href="#contacto">Contactarme</a></div>
         </div>
         <div className="hero-footer"><span>APRENDER. CREAR. SEGUIR.</span><a href="#sobre-mi">SCROLL PARA CONTINUAR <span aria-hidden="true">↓</span></a></div>
@@ -70,7 +81,7 @@ export default function App() {
       <section className="about section" id="sobre-mi" aria-labelledby="about-title">
         <div className="section-heading"><span className="section-index" aria-hidden="true">01 /</span><h2 id="about-title">SOBRE MÍ</h2></div>
         <div className="about-grid">
-          <div className="bio"><p className="intro">Un poco sobre el jugador.</p><p>Soy Maximiliano Koch, estudiante de Ingeniería en Sistemas. Desarrollo proyectos con C# y SQL, y páginas web con HTML, CSS y JavaScript. Aprendo poniendo en práctica lo que estudio: desde una aplicación de gestión de stock hasta un juego de fútbol.</p><a className="text-link" href={profile.github} target="_blank" rel="noopener noreferrer">Conocer mi GitHub <span className="external-label">[abrir]</span></a></div>
+          <div className="bio"><p className="intro">Un poco sobre el jugador.</p><p>Soy Maximiliano Koch, estudiante de Ingeniería en Sistemas y editor de video. Desarrollo proyectos con C# y SQL, y páginas web con HTML, CSS y JavaScript. También edito videos cortos para redes y marca personal, combinando programación y creatividad en lo que hago.</p><a className="text-link" href={profile.github} target="_blank" rel="noopener noreferrer">Conocer mi GitHub <span className="external-label">[abrir]</span></a></div>
           <div className="skills"><h3>MI INVENTARIO</h3><div className="skill-row"><span className="skill-label">Frontend</span><div className="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div></div><div className="skill-row"><span className="skill-label">Backend</span><div className="tags"><span>C#</span><span>SQL</span></div></div><div className="skill-row"><span className="skill-label">Herramientas</span><div className="tags"><span>GitHub</span></div></div></div>
         </div>
       </section>
@@ -83,8 +94,18 @@ export default function App() {
         </article>)}</div>
       </section>
 
+      <section className="editing section" id="edicion" aria-labelledby="editing-title">
+        <div className="section-heading"><span className="section-index" aria-hidden="true">03 /</span><h2 id="editing-title">EDICIÓN DE VIDEO</h2></div>
+        <div className="editing-intro"><div><p className="intro">Otra forma de contar una historia.</p><p className="muted">Una selección de mis ediciones para videos cortos y marca personal.</p></div><span className="editing-label">MI LADO CREATIVO</span></div>
+        <div className="editing-grid">{edits.map((edit,index) => <article className="edit-card" key={edit.title}>
+          <div className="edit-media">{edit.src ? <video controls playsInline preload="metadata" poster={edit.poster} aria-label={`Edición de video: ${edit.title}`}><source src={`./edicion/${edit.src}`} type="video/mp4" />Tu navegador no puede reproducir este video.</video> : <img src={edit.poster} alt={`Miniatura original de mi edición: ${edit.title}`} width="405" height="720" loading="lazy" />}</div>
+          <div className="edit-caption"><span className="edit-index">0{index+1}</span><div><h3>{edit.title}</h3><p>EDICIÓN / VIDEO CORTO</p></div></div>
+        </article>)}</div>
+        <div className="editing-bottom"><p>Estas son miniaturas de mis trabajos.<br />Los videos se pueden ver en mi portfolio de Canva.</p><a className="pixel-button" href={profile.videoPortfolio} target="_blank" rel="noopener noreferrer">Ver videos en Canva</a></div>
+      </section>
+
       <section className="contact section" id="contacto" aria-labelledby="contact-title">
-        <div className="section-heading"><span className="section-index" aria-hidden="true">03 /</span><h2 id="contact-title">CONTACTO</h2></div>
+        <div className="section-heading"><span className="section-index" aria-hidden="true">04 /</span><h2 id="contact-title">CONTACTO</h2></div>
         <div className="contact-box"><div><p className="contact-kicker">EL SIGUIENTE PROYECTO</p><h3>¿Hablamos?</h3><p>Si querés conocer más sobre mis proyectos<br className="desktop-break" /> o ponerte en contacto, escribime.</p><a className="email-link" href={`mailto:${profile.email}`}>{profile.email}</a></div><div className="contact-actions"><a className="pixel-button primary" href={`mailto:${profile.email}`}><Heart />Enviar un email</a><button className="pixel-button" type="button" onClick={copyEmail}>Copiar email</button><p className="copy-feedback" role="status" aria-live="polite">{copied}</p></div></div>
         <div className="social-links"><a href={profile.github} target="_blank" rel="noopener noreferrer">GitHub <span>[abrir]</span></a>{profile.linkedin ? <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn <span>[abrir]</span></a> : <span className="linkedin-pending">LinkedIn <span>[próximamente]</span></span>}<a href="#inicio" className="back-top">Volver al inicio <span aria-hidden="true">↑</span></a></div>
       </section>

@@ -27,6 +27,7 @@ npm run preview
 - Presentación y botones a proyectos y contacto.
 - Biografía de tres oraciones y habilidades por categoría.
 - Futbolle, FoodRoute y el propio portfolio como tercer proyecto.
+- Perfil de editor de video y sección independiente con cuatro miniaturas reales del portfolio de Canva.
 - Email, enlace a GitHub y botón para copiar el email.
 - Navegación con sección activa, enlace para saltar al contenido y estados de foco visibles.
 - Diseño adaptable, fuentes locales y animación que respeta `prefers-reduced-motion`.
@@ -63,3 +64,9 @@ Alternativa: importar el repositorio en Vercel o Netlify, elegir Vite, usar `npm
 7. Entregar el enlace público del repositorio y el deploy.
 
 No se incluye formulario: la consigna lo permite como opcional. El botón de email abre el cliente de correo del visitante. Copiar email usa el portapapeles en contextos compatibles; si no está disponible, muestra el texto para copiar manualmente. El puntaje Lighthouse no se ha medido.
+
+## Edición de video
+
+La sección de edición presenta cuatro miniaturas de trabajos reales encontrados en el Canva proporcionado por Maximiliano. El botón abre el portfolio original de Canva. No se incorporaron tarifas, packs ni promesas comerciales al sitio.
+
+Los MP4 de Canva no se pudieron exportar: sus reproductores usan URLs `blob` limitadas a la sesión del navegador. Por eso esta versión muestra miniaturas y un enlace a Canva, sin simular reproducción local. Cuando estén disponibles los archivos originales, copiarlos a `public/edicion/` y completar `src` en el arreglo `edits` de `src/App.jsx` (por ejemplo `src: 'llados.mp4'`). El componente reemplaza automáticamente la miniatura por un reproductor nativo con controles. Revisar el tamaño de los videos antes de publicarlos en GitHub Pages; para videos grandes es preferible usar un alojamiento de video.
