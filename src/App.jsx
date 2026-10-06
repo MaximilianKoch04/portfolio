@@ -7,7 +7,7 @@ const profile = {
   // URL de LinkedIn proporcionada por Maximiliano.
   linkedin: 'https://www.linkedin.com/in/maximiliano-undefined-a04414429/',
   // Agregá la URL del repositorio de este portfolio cuando esté publicado.
-  portfolioRepo: '',
+  portfolioRepo: 'https://github.com/MaximilianKoch04/portfolio',
   videoPortfolio: '',
 };
 

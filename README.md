@@ -32,7 +32,7 @@ npm run preview
 - Navegación con sección activa, enlace para saltar al contenido y estados de foco visibles.
 - Diseño adaptable, fuentes locales y animación que respeta `prefers-reduced-motion`.
 
-Los datos editables están en `src/App.jsx`. La biografía es un borrador que Maximiliano debe revisar y adaptar con sus palabras antes de entregar. El enlace real de LinkedIn proporcionado por Maximiliano ya está incluido en `profile.linkedin`. Completar también `profile.portfolioRepo` cuando exista el repositorio del portfolio.
+Los datos editables están en `src/App.jsx`. La biografía es un borrador que Maximiliano debe revisar y adaptar con sus palabras antes de entregar. El enlace real de LinkedIn proporcionado por Maximiliano ya está incluido en `profile.linkedin`. El enlace del propio portfolio apunta a `https://github.com/MaximilianKoch04/portfolio`.
 
 ## Subir a GitHub conservando los commits
 
