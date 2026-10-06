@@ -4,8 +4,8 @@ const profile = {
   name: 'Maximiliano Koch',
   email: 'maxikoch40@gmail.com',
   github: 'https://github.com/MaximilianKoch04',
-  // Cuando crees tu cuenta, pegá aquí la URL completa de LinkedIn.
-  linkedin: '',
+  // URL de LinkedIn proporcionada por Maximiliano.
+  linkedin: 'https://www.linkedin.com/in/maximiliano-undefined-a04414429/',
   // Agregá la URL del repositorio de este portfolio cuando esté publicado.
   portfolioRepo: '',
   videoPortfolio: '',

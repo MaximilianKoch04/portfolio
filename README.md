@@ -32,7 +32,7 @@ npm run preview
 - Navegación con sección activa, enlace para saltar al contenido y estados de foco visibles.
 - Diseño adaptable, fuentes locales y animación que respeta `prefers-reduced-motion`.
 
-Los datos editables están en `src/App.jsx`. La biografía es un borrador que Maximiliano debe revisar y adaptar con sus palabras antes de entregar. LinkedIn figura como «próximamente» porque todavía no existe la cuenta; eso **no cumple todavía** el requisito de enlace a LinkedIn. Crear la cuenta y completar `profile.linkedin` con su URL real. Completar también `profile.portfolioRepo` cuando exista el repositorio del portfolio.
+Los datos editables están en `src/App.jsx`. La biografía es un borrador que Maximiliano debe revisar y adaptar con sus palabras antes de entregar. El enlace real de LinkedIn proporcionado por Maximiliano ya está incluido en `profile.linkedin`. Completar también `profile.portfolioRepo` cuando exista el repositorio del portfolio.
 
 ## Subir a GitHub conservando los commits
 
@@ -56,7 +56,7 @@ Alternativa: importar el repositorio en Vercel o Netlify, elegir Vite, usar `npm
 ## Revisión antes de entregar
 
 1. Revisar y personalizar la biografía.
-2. Crear LinkedIn y agregar su URL a `profile.linkedin`.
+2. Revisar que los enlaces de GitHub y LinkedIn abran correctamente.
 3. Agregar el enlace del portfolio a `profile.portfolioRepo`.
 4. Publicar el repositorio con su historial de commits y activar Pages.
 5. Abrir el deploy en 360, 768 y 1280 píxeles; comprobar que no haya scroll horizontal.
