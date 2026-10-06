@@ -8,7 +8,7 @@ const profile = {
   linkedin: 'https://www.linkedin.com/in/maximiliano-undefined-a04414429/',
   // Agregá la URL del repositorio de este portfolio cuando esté publicado.
   portfolioRepo: 'https://github.com/MaximilianKoch04/portfolio',
-  videoPortfolio: '',
+  videoPortfolio: '', // Completar solo con un enlace público de visualización, nunca de edición.
 };
 
 const sections = [['inicio', 'Inicio'], ['sobre-mi', 'Sobre mí'], ['proyectos', 'Proyectos'], ['edicion', 'Edición'], ['contacto', 'Contacto']];
@@ -101,7 +101,7 @@ export default function App() {
           <div className="edit-media">{edit.src ? <video controls playsInline preload="metadata" poster={edit.poster} aria-label={`Edición de video: ${edit.title}`}><source src={`./edicion/${edit.src}`} type="video/mp4" />Tu navegador no puede reproducir este video.</video> : <img src={edit.poster} alt={`Miniatura original de mi edición: ${edit.title}`} width="405" height="720" loading="lazy" />}</div>
           <div className="edit-caption"><div><h3>{edit.title}</h3><p>EDICIÓN / VIDEO CORTO</p></div></div>
         </article>)}</div>
-        <div className="editing-bottom"><p>Estas son miniaturas de mis trabajos.<br />Los videos se pueden ver en mi portfolio de Canva.</p><a className="pixel-button" href={profile.videoPortfolio} target="_blank" rel="noopener noreferrer">Ver videos en Canva</a></div>
+        <div className="editing-bottom"><p>Estas son miniaturas de mis trabajos.<br />Una selección de mis ediciones para redes y marca personal.</p>{profile.videoPortfolio && <a className="pixel-button" href={profile.videoPortfolio} target="_blank" rel="noopener noreferrer">Ver videos</a>}</div>
       </section>
 
       <section className="contact section" id="contacto" aria-labelledby="contact-title">
